@@ -1,0 +1,29 @@
+.container {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin-bottom: 4rem;
+}
+
+.cardImage {
+  width: 15rem;
+  max-height: 20rem;
+  margin: 2rem;
+}
+
+.cardTitle {
+  text-align: center;
+  text-decoration: underline orange;
+  text-underline-offset: 0.5rem;
+}
+
+.contentCard {
+  transition: all 0.3s ease-in-out;
+}
+
+.contentCard:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
