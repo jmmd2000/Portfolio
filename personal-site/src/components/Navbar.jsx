@@ -1,9 +1,21 @@
 import { useEffect, useState } from "react";
 import classes from "./Navbar.module.css";
+import { AiOutlineMenu as OpenMenu } from "react-icons/ai";
+import { AiOutlineClose as CloseMenu } from "react-icons/ai";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [showItems, setShowItems] = useState(false);
+  const [openIcon, setOpenIcon] = useState(true);
+
+  const toggleItems = () => {
+    setShowItems(!showItems);
+    if (openIcon) {
+      setOpenIcon(false);
+    } else {
+      setOpenIcon(true);
+    }
+  };
 
   const clickHandler = (link) => {
     // Set the clicked link to active and scroll to that element minus an offset
@@ -26,37 +38,36 @@ const Navbar = () => {
       const scrollPosition =
         window.pageYOffset || document.documentElement.scrollTop;
       // Double the height of the navbar
-      const offset = 300;
+      const offset = 200;
       const finalScrollPos = scrollPosition + offset;
       const aboutSection = document.getElementById("about");
-      const skillsSection = document.getElementById("skills");
       const educationSection = document.getElementById("education");
+      const experienceSection = document.getElementById("experience");
+      const skillsSection = document.getElementById("skills");
       const projectsSection = document.getElementById("projects");
       const contactSection = document.getElementById("contact");
-
-      // For the navbar to shrink on scroll
-      if (scrollPosition > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
 
       // Updates the navbar as the user manually scrolls
       if (
         finalScrollPos >= aboutSection.offsetTop &&
-        finalScrollPos < skillsSection.offsetTop
+        finalScrollPos < educationSection.offsetTop
       ) {
         setActive("about");
       } else if (
-        finalScrollPos >= skillsSection.offsetTop &&
-        finalScrollPos < educationSection.offsetTop
-      ) {
-        setActive("skills");
-      } else if (
         finalScrollPos >= educationSection.offsetTop &&
-        finalScrollPos < projectsSection.offsetTop
+        finalScrollPos < experienceSection.offsetTop
       ) {
         setActive("education");
+      } else if (
+        finalScrollPos >= experienceSection.offsetTop &&
+        finalScrollPos < skillsSection.offsetTop
+      ) {
+        setActive("experience");
+      } else if (
+        finalScrollPos >= skillsSection.offsetTop &&
+        finalScrollPos < projectsSection.offsetTop
+      ) {
+        setActive("skills");
       } else if (
         finalScrollPos >= projectsSection.offsetTop &&
         finalScrollPos < contactSection.offsetTop
@@ -76,63 +87,90 @@ const Navbar = () => {
     };
   }, []);
 
+  let width = window.innerWidth;
+
+  useEffect(() => {
+    console.log(width);
+    if (width < 990) {
+      setShowItems(false);
+    } else {
+      setShowItems(true);
+    }
+  }, [width]);
+
   return (
-    <nav
-      className={`${classes.navContainer} ${
-        isScrolled ? classes.navContainerShrunk : ""
-      }`}
-    >
+    <nav className={classes.navContainer}>
+      <div
+        className={classes.toggle}
+        onClick={toggleItems}
+      >
+        {openIcon ? (
+          <OpenMenu className={classes.icon} />
+        ) : (
+          <CloseMenu className={classes.icon} />
+        )}
+      </div>
       <h1
         className={classes.navHeader}
         onClick={() => clickHandler("hero")}
       >
         James Doyle
       </h1>
-      <p
-        // href="#about"
-        className={`${classes.navItem} ${
-          active === "about" ? classes.active : ""
-        }`}
-        onClick={() => clickHandler("about")}
+      <ul
+        className={`${classes.navList} 
+      ${showItems === false ? classes.hide : classes.show}`}
       >
-        About Me
-      </p>
-      <p
-        // href="#skills"
-        className={`${classes.navItem} ${
-          active === "skills" ? classes.active : ""
-        }`}
-        onClick={() => clickHandler("skills")}
-      >
-        Skills
-      </p>
-      <p
-        // href="#education"
-        className={`${classes.navItem} ${
-          active === "education" ? classes.active : ""
-        }`}
-        onClick={() => clickHandler("education")}
-      >
-        Education
-      </p>
-      <p
-        // href="#projects"
-        className={`${classes.navItem} ${
-          active === "projects" ? classes.active : ""
-        }`}
-        onClick={() => clickHandler("projects")}
-      >
-        Projects
-      </p>
-      <p
-        // href="#contact"
-        className={`${classes.navItem} ${
-          active === "contact" ? classes.active : ""
-        }`}
-        onClick={() => clickHandler("contact")}
-      >
-        Contact
-      </p>
+        <li
+          className={`${classes.navItem} ${
+            active === "about" ? classes.active : ""
+          } `}
+          onClick={() => clickHandler("about")}
+        >
+          About Me
+        </li>
+
+        <li
+          className={`${classes.navItem} ${
+            active === "education" ? classes.active : ""
+          }`}
+          onClick={() => clickHandler("education")}
+        >
+          Education
+        </li>
+        <li
+          className={`${classes.navItem} ${
+            active === "experience" ? classes.active : ""
+          }`}
+          onClick={() => clickHandler("experience")}
+        >
+          Experience
+        </li>
+        <li
+          className={`${classes.navItem} ${
+            active === "skills" ? classes.active : ""
+          }`}
+          onClick={() => clickHandler("skills")}
+        >
+          Skills
+        </li>
+        <li
+          className={`${classes.navItem} ${
+            active === "projects" ? classes.active : ""
+          }`}
+          onClick={() => clickHandler("projects")}
+        >
+          Projects
+        </li>
+
+        <li
+          className={`${classes.navItem} ${
+            active === "contact" ? classes.active : ""
+          }`}
+          onClick={() => clickHandler("contact")}
+        >
+          Contact
+        </li>
+      </ul>
     </nav>
   );
 };

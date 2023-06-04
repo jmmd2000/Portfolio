@@ -1,0 +1,36 @@
+table {
+  width: 50rem;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid var(--dark-red);
+  /* margin: 0 auto 0 4rem; */
+  margin: 3rem auto;
+  padding: 0;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--darker-red);
+}
+
+th,
+td {
+  border: 1px solid var(--dark-red);
+  padding: 0.5rem;
+  max-height: 20px;
+  width: 50%;
+}
+
+th {
+  text-align: left;
+  background-color: var(--darkest-red);
+}
+
+tr:nth-child(even) {
+  background-color: var(--dark-red);
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    width: 90%;
+  }
+}

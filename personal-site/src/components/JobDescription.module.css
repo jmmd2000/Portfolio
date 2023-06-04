@@ -1,0 +1,108 @@
+.descriptionContainer {
+  margin-left: 2.5rem;
+}
+
+.jobTitle {
+  font-size: 3.2rem;
+  margin-bottom: 0.5em;
+  text-decoration: underline var(--darker-red);
+}
+
+.companyName {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--darker-red);
+  margin-bottom: 0.5em;
+}
+
+.companyAddress {
+  margin: 0 !important;
+  font-size: 1.8rem !important;
+  font-weight: 700;
+  margin-bottom: 0.5em !important;
+}
+
+.companyNumber {
+  margin: 0 !important;
+  font-size: 1.8rem !important;
+  font-weight: 700;
+  margin-bottom: 1rem !important;
+}
+
+.companyLink {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.jobDescription {
+  margin: 0 !important;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin: 1.5rem auto !important;
+}
+
+.jobTasksIntro {
+  font-size: 2rem;
+  margin: 1rem;
+  color: var(--darker-red);
+}
+
+.jobTasks {
+  font-size: 1.8rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.task {
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 550px) {
+  .jobTitle {
+    font-size: 2.8rem;
+  }
+
+  .companyName {
+    font-size: 2.4rem;
+  }
+
+  .companyAddress {
+    font-size: 1.8rem !important;
+  }
+
+  .companyNumber {
+    font-size: 1.8rem !important;
+  }
+
+  .companyLink {
+    font-size: 1.8rem;
+  }
+
+  .jobDescription {
+    font-size: 1.8rem;
+  }
+
+  .jobTasksIntro {
+    font-size: 1.8rem;
+  }
+
+  .jobTasks {
+    font-size: 1.6rem;
+  }
+
+  .task {
+    padding: 0.5rem;
+  }
+
+  .descriptionContainer {
+    margin-left: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .descriptionContainer {
+    margin: 0;
+    width: 100%;
+  }
+}

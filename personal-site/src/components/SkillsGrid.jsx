@@ -26,7 +26,7 @@ import { SiC as CIcon } from "react-icons/si";
 const SkillsGrid = () => {
   return (
     <>
-      <p>I am most proficient with:</p>
+      <p className={classes.text}>I am most proficient with:</p>
       <div className={classes.primarySkills}>
         <div className={classes.skill}>
           <HtmlIcon className={classes.skillIcon} />
@@ -53,7 +53,7 @@ const SkillsGrid = () => {
           <h3 className={classes.skillTitle}>Java</h3>
         </div>
       </div>
-      <p>I have experience with:</p>
+      <p className={classes.text}>I have experience with:</p>
       <div className={classes.secondarySkills}>
         <div className={classes.skill}>
           <FlutterIcon className={classes.skillIcon} />

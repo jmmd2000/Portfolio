@@ -18,13 +18,12 @@
 
 .skill {
   width: 10rem;
-  background-color: #443c68;
-  border: 2px solid orange;
-  border-radius: 10px;
-  padding: 2rem;
+  height: 12rem;
+  background-color: var(--dark-red);
+  border: 3px solid var(--darker-red);
+  padding: 1rem;
   margin: 1rem auto;
-  font-size: 2.2rem;
-  box-shadow: 5px 5px 2px #18122b;
+  /* font-size: 2.2rem; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,24 +32,28 @@
 }
 
 .skill:hover {
-  background-color: orange;
-  color: white;
-  border: 2px solid #443c68;
-  box-shadow: none;
+  background-color: var(--text-color);
+  color: var(--darker-red);
+  box-shadow: 0 0 2px var(--darker-red);
   transition: all 0.2s ease-in-out;
 }
 
 .skillIcon {
-  font-size: 6rem;
+  font-size: 4.8rem;
   margin: 1rem;
 }
 
 .skillTitle {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   text-align: center;
-  text-decoration: underline orange;
+  text-decoration: underline var(--darkest-red);
+  text-decoration-thickness: 3px;
   text-underline-offset: 0.5rem;
   margin: 2rem 0;
+}
+
+.text {
+  margin: 2rem 0 !important;
 }
 
 @media screen and (max-width: 1150px) {
@@ -60,8 +63,20 @@
 }
 
 @media screen and (max-width: 940px) {
+  .primarySkills {
+    max-width: fit-content;
+    gap: 1rem;
+  }
+
   .secondarySkills {
     grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: fit-content;
+    max-height: fit-content;
+  }
+
+  .skill {
+    margin: 0;
   }
 }
 
@@ -73,6 +88,11 @@
 
 @media screen and (max-width: 450px) {
   .secondarySkills {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+  }
+
+  .skill {
+    padding: 0;
   }
 }

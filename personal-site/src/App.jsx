@@ -3,52 +3,13 @@ import ContentSection from "./components/ContentSection";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import SkillsGrid from "./components/SkillsGrid";
-import TopThree from "./components/TopThree";
-
-const artists = [
-  {
-    title: "Post Malone",
-    image: "/src/assets/artists/postmalone.webp",
-  },
-  {
-    title: "Billie Eilish",
-    image: "/src/assets/artists/billieeilish.webp",
-  },
-  {
-    title: "The Killers",
-    image: "/src/assets/artists/thekillers.webp",
-  },
-];
-
-const movies = [
-  {
-    title: "Into the Spider-Verse",
-    image: "/src/assets/movies/spiderverse.webp",
-  },
-  {
-    title: "The Truman Show",
-    image: "/src/assets/movies/truman.webp",
-  },
-  {
-    title: "The Martian",
-    image: "/src/assets/movies/martian.webp",
-  },
-];
-
-const games = [
-  {
-    title: "Minecraft",
-    image: "/src/assets/games/minecraft.webp",
-  },
-  {
-    title: "Factorio",
-    image: "/src/assets/games/factorio.webp",
-  },
-  {
-    title: "Spiderman",
-    image: "/src/assets/games/spiderman.webp",
-  },
-];
+import ModuleTable from "./components/ModuleTable";
+import JobDescription from "./components/JobDescription";
+import { maynooth } from "./inputs/grades";
+import { fusio } from "./inputs/jobs";
+import Projects from "./components/Projects";
+import classes from "./components/HeroSection.module.css";
+import { Envelope, GithubLogo, LinkedinLogo } from "@phosphor-icons/react";
 
 function App() {
   return (
@@ -58,179 +19,126 @@ function App() {
       <HeroSection />
 
       <ContentSection
-        title="About Me"
+        title="The personal stuff."
+        subtitle="About Me"
         id="about"
       >
         <p>
-          I recently finished up my Computer Science degree from Maynooth
-          University and am itching to get started in the world of professional
-          web development.
+          I spend a lot of time listening to music, sometimes I write small{" "}
+          <a href="http://jamesreviewsmusic.online/">reviews.</a> I enjoy movies
+          when they&apos;re good. If I&apos;m not programming, I&apos;m probably
+          playing video-games or spending time with my partner.
         </p>
         <p>
-          I love music, and sometimes I review albums on my{" "}
-          <a href="http://jamesreviewsmusic.online/">blog</a>. My current top
-          three artists would have to be:
+          I have a weird hobby where I try to recreate old forms and documents
+          with HTML and CSS. It&apos;s great practice, and can be found on my{" "}
+          <a href="https://codepen.io/jmmd2000">CodePen.</a>
         </p>
-        <TopThree contentObjects={artists} />
         <p>
-          I spend a lot of time watching movies. Some of my favourites include:
+          My passion for web development stems from the <span>CoderDojo</span>{" "}
+          classes my Dad took me to as a kid. It wasn&apos;t until my teenage
+          years when I went more in depth with programming that I realised it
+          was what I wanted to do.
         </p>
-        <TopThree contentObjects={movies} />
-        <p>I also play a lot of video games. My current favourites are:</p>
-        <TopThree contentObjects={games} />
+        <p>
+          I applied to many computer science courses after secondary school.
+        </p>
+        <p>Speaking of which...</p>
       </ContentSection>
 
       <ContentSection
-        title="Skills"
+        title="The academic stuff."
+        subtitle="Education"
+        id="education"
+      >
+        <p>
+          Coming out of secondary school, I studied{" "}
+          <span>Computer Systems and Networks</span> in{" "}
+          <span>Dunboyne College,</span> and graduated with full honours. I
+          really enjoyed my time here as it was the first proper taste of what I
+          wanted to do.
+        </p>
+        <p>
+          From there, I studied{" "}
+          <span>Computer Science and Software Engineering</span> in{" "}
+          <span>Maynooth University,</span> where I just graduated with a 2.1
+          (3.3 GPA).
+        </p>
+
+        <ModuleTable
+          title={"Year"}
+          modules={maynooth}
+        />
+
+        <p>
+          I had a wide range of modules here, from <span>calculus</span> and{" "}
+          <span>operating systems</span> to <span>theoretical computation</span>{" "}
+          and <span>cryptography</span>. Ultimately, I learned a lot from this
+          course, but it was lacking in web technologies. Pretty much my entire
+          knowledge of web development is self-taught.
+        </p>
+      </ContentSection>
+
+      <ContentSection
+        title="The professional stuff."
+        subtitle="Experience"
+        id="experience"
+      >
+        <JobDescription job={fusio} />
+      </ContentSection>
+
+      <ContentSection
+        title="The knowledge stuff."
+        subtitle="Skills"
         id="skills"
       >
         <SkillsGrid />
       </ContentSection>
+
       <ContentSection
-        title="Education"
-        id="education"
-      >
-        <p>I&apos;m James, a passionate frontend developer based in Dublin.</p>
-        <p>
-          With a lifelong love for web development that began in my childhood, I
-          enjoy creating dynamic web applications using React. From crafting
-          captivating user experiences to writing clean and efficient code, I
-          bring enthusiasm and a fresh perspective to every project.
-        </p>
-        <p>
-          If you&apos;re seeking a dedicated developer to join your team,
-          let&apos;s connect and discuss how I can contribute to your success.
-        </p>
-        <p>I&apos;m James, a passionate frontend developer based in Dublin.</p>
-        <p>
-          With a lifelong love for web development that began in my childhood, I
-          enjoy creating dynamic web applications using React. From crafting
-          captivating user experiences to writing clean and efficient code, I
-          bring enthusiasm and a fresh perspective to every project.
-        </p>
-        <p>
-          If you&apos;re seeking a dedicated developer to join your team,
-          let&apos;s connect and discuss how I can contribute to your success.
-        </p>
-        <p>I&apos;m James, a passionate frontend developer based in Dublin.</p>
-        <p>
-          With a lifelong love for web development that began in my childhood, I
-          enjoy creating dynamic web applications using React. From crafting
-          captivating user experiences to writing clean and efficient code, I
-          bring enthusiasm and a fresh perspective to every project.
-        </p>
-        <p>
-          If you&apos;re seeking a dedicated developer to join your team,
-          let&apos;s connect and discuss how I can contribute to your success.
-        </p>
-        <p>I&apos;m James, a passionate frontend developer based in Dublin.</p>
-        <p>
-          With a lifelong love for web development that began in my childhood, I
-          enjoy creating dynamic web applications using React. From crafting
-          captivating user experiences to writing clean and efficient code, I
-          bring enthusiasm and a fresh perspective to every project.
-        </p>
-        <p>
-          If you&apos;re seeking a dedicated developer to join your team,
-          let&apos;s connect and discuss how I can contribute to your success.
-        </p>
-      </ContentSection>
-      <ContentSection
-        title="Projects"
+        title="My stuff."
+        subtitle="Projects"
         id="projects"
       >
-        <p>I&apos;m James, a passionate frontend developer based in Dublin.</p>
         <p>
-          With a lifelong love for web development that began in my childhood, I
-          enjoy creating dynamic web applications using React. From crafting
-          captivating user experiences to writing clean and efficient code, I
-          bring enthusiasm and a fresh perspective to every project.
+          All of my projects are on my{" "}
+          <a href="https://github.com/jmmd2000">Github</a>, but my best are
+          listed below.
         </p>
-        <p>
-          If you&apos;re seeking a dedicated developer to join your team,
-          let&apos;s connect and discuss how I can contribute to your success.
-        </p>
-        <p>I&apos;m James, a passionate frontend developer based in Dublin.</p>
-        <p>
-          With a lifelong love for web development that began in my childhood, I
-          enjoy creating dynamic web applications using React. From crafting
-          captivating user experiences to writing clean and efficient code, I
-          bring enthusiasm and a fresh perspective to every project.
-        </p>
-        <p>
-          If you&apos;re seeking a dedicated developer to join your team,
-          let&apos;s connect and discuss how I can contribute to your success.
-        </p>
-        <p>I&apos;m James, a passionate frontend developer based in Dublin.</p>
-        <p>
-          With a lifelong love for web development that began in my childhood, I
-          enjoy creating dynamic web applications using React. From crafting
-          captivating user experiences to writing clean and efficient code, I
-          bring enthusiasm and a fresh perspective to every project.
-        </p>
-        <p>
-          If you&apos;re seeking a dedicated developer to join your team,
-          let&apos;s connect and discuss how I can contribute to your success.
-        </p>
-        <p>I&apos;m James, a passionate frontend developer based in Dublin.</p>
-        <p>
-          With a lifelong love for web development that began in my childhood, I
-          enjoy creating dynamic web applications using React. From crafting
-          captivating user experiences to writing clean and efficient code, I
-          bring enthusiasm and a fresh perspective to every project.
-        </p>
-        <p>
-          If you&apos;re seeking a dedicated developer to join your team,
-          let&apos;s connect and discuss how I can contribute to your success.
-        </p>
+        <Projects />
       </ContentSection>
       <ContentSection
-        title="Contact"
+        title="The important stuff."
+        subtitle="Contact"
         id="contact"
       >
-        <p>I&apos;m James, a passionate frontend developer based in Dublin.</p>
+        <p>Thanks for taking the time to look through my site.</p>
         <p>
-          With a lifelong love for web development that began in my childhood, I
-          enjoy creating dynamic web applications using React. From crafting
-          captivating user experiences to writing clean and efficient code, I
-          bring enthusiasm and a fresh perspective to every project.
+          If you&apos;d like to get in touch, the best places are via the links
+          below!
         </p>
+        <div className={classes.heroIcons}>
+          <a href="https://github.com/jmmd2000">
+            <GithubLogo
+              className={classes.icon}
+              title="Github"
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/james-doyle-4b47ba245/">
+            <LinkedinLogo
+              className={classes.icon}
+              title="LinkedIn"
+            />
+          </a>
+          <a href="mailto:jamesmddoyle@gmail.com">
+            <Envelope
+              className={classes.icon}
+              title="Email"
+            />
+          </a>
+        </div>
         <p>
-          If you&apos;re seeking a dedicated developer to join your team,
-          let&apos;s connect and discuss how I can contribute to your success.
-        </p>
-        <p>I&apos;m James, a passionate frontend developer based in Dublin.</p>
-        <p>
-          With a lifelong love for web development that began in my childhood, I
-          enjoy creating dynamic web applications using React. From crafting
-          captivating user experiences to writing clean and efficient code, I
-          bring enthusiasm and a fresh perspective to every project.
-        </p>
-        <p>
-          If you&apos;re seeking a dedicated developer to join your team,
-          let&apos;s connect and discuss how I can contribute to your success.
-        </p>
-        <p>I&apos;m James, a passionate frontend developer based in Dublin.</p>
-        <p>
-          With a lifelong love for web development that began in my childhood, I
-          enjoy creating dynamic web applications using React. From crafting
-          captivating user experiences to writing clean and efficient code, I
-          bring enthusiasm and a fresh perspective to every project.
-        </p>
-        <p>
-          If you&apos;re seeking a dedicated developer to join your team,
-          let&apos;s connect and discuss how I can contribute to your success.
-        </p>
-        <p>I&apos;m James, a passionate frontend developer based in Dublin.</p>
-        <p>
-          With a lifelong love for web development that began in my childhood, I
-          enjoy creating dynamic web applications using React. From crafting
-          captivating user experiences to writing clean and efficient code, I
-          bring enthusiasm and a fresh perspective to every project.
-        </p>
-        <p>
-          If you&apos;re seeking a dedicated developer to join your team,
-          let&apos;s connect and discuss how I can contribute to your success.
+          <span>James.</span>
         </p>
       </ContentSection>
     </>

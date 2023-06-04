@@ -1,39 +1,136 @@
 .section {
-  max-width: 100%;
+  /* margin: 25rem auto 5rem 15rem; */
+  margin: 0 auto 25rem 15rem;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
   /* height: 100vh; */
-  margin: 20rem auto 2rem auto;
 }
 
 .sectionTitle {
-  font-size: 3.6rem;
-  color: orange;
+  font-size: 6rem;
+  color: var(--darkest-red);
   text-align: start;
-  text-decoration: underline orange;
   text-underline-offset: 0.5rem;
-  margin: 2rem 0;
+  margin: 0 0 2rem 0;
+}
+
+.sectionSubtitle {
+  font-size: 2.4rem;
+  color: var(--text-color);
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .sectionContent {
-  font-size: 1.8rem;
-  color: white;
+  color: var(--text-color);
   text-align: start;
   margin: 2rem 0;
 }
 
 .sectionContent p {
-  margin: 2rem 0;
-  animation: fadeIn 1s ease-in-out;
+  margin: 2rem 0 2rem 2rem;
+  font-size: 2.4rem;
+  max-width: 60ch;
 }
 
 .sectionContent a {
-  color: orange;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease-in-out;
+  color: var(--darkest-red);
+  text-decoration: underline;
+  transition: all 0.1s ease-in-out;
 }
 
 .sectionContent a:hover {
-  color: white;
-  text-decoration: underline orange;
-  text-underline-offset: 0.5rem;
+  font-weight: 600;
+  color: var(--dark-red);
+  transition: all 0.1s ease-in-out;
+}
+
+span {
+  color: var(--darkest-red);
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1100px) {
+  .section {
+    margin: 0 auto 25rem 5rem;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .section {
+    margin: 0 auto 25rem 2rem;
+  }
+
+  .sectionContent {
+    margin: 0;
+  }
+
+  .sectionTitle {
+    font-size: 4.8rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 2rem;
+  }
+
+  .sectionContent p {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .section {
+    margin: 0 auto 25rem 2rem;
+  }
+
+  .sectionContent {
+    width: 90%;
+  }
+
+  .sectionTitle {
+    font-size: 4.4rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.8rem;
+  }
+
+  .sectionContent p {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .sectionContent {
+    width: 100%;
+  }
+
+  .sectionTitle {
+    font-size: 3.6rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.6rem;
+  }
+
+  .sectionContent p {
+    font-size: 1.6rem;
+    margin: 0 0 2rem 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sectionTitle {
+    font-size: 3.2rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.4rem;
+  }
+
+  .sectionContent p {
+    font-size: 1.4rem;
+  }
 }

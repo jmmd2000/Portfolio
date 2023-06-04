@@ -1,34 +1,72 @@
 .heroContainer {
-  max-width: 100%;
+  /* max-width: 100%; */
   /* margin: 20rem auto 5rem auto; */
-  margin: 0 auto;
-  height: 100vh;
+  /* height: 100vh; */
+  margin: 20rem auto 0 15rem;
   display: flex;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  height: 90vh;
   /* border: 1px solid black; */
 }
 
-.heroTitle {
-  font-size: 4.8rem;
-  text-align: start;
-  padding: 0 2rem 2rem 0;
-  margin: 0 2rem 2rem 0;
-  color: orange;
+.heroTopContent,
+.heroBottomContent {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  text-align: left;
 }
 
-.heroTextContainer {
+.heroTopContent {
+  max-height: 24rem;
+  align-items: last baseline;
+  margin-bottom: 4rem;
+}
+
+.heroBottomContent {
+  flex-direction: column;
+}
+
+.heroSubtitle {
+  font-size: 2.8rem;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.heroTitle {
+  font-size: 6rem;
+  /* text-align: start;
+  padding: 0 2rem 2rem 0;
+  margin: 0 2rem 2rem 0; */
+  color: var(--darkest-red);
+}
+
+.introContainer {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: baseline;
   justify-content: start;
-  width: 50%;
+  margin: 0;
+  /* width: 50%; */
+}
+
+.introText {
+  font-size: 2.8rem;
+  color: var(--text-color);
+  text-align: start;
+  font-weight: bold;
+  max-width: 25ch;
 }
 
 .heroImage {
   width: 20rem;
   aspect-ratio: 1/1;
-  border-radius: 50%;
-  border: 3px solid orange;
+  /* border: 4px solid var(--darkest-red); */
+
+  box-shadow: 0 0 0 4px var(--darkest-red);
+  margin-right: 5rem;
 }
 
 .heroContent {
@@ -39,9 +77,173 @@
   /* border: 1px solid orange; */
 }
 
-.heroText {
-  font-size: 1.8rem;
-  color: white;
-  text-align: start;
-  margin-bottom: 1rem;
+.heroText,
+.heroSubtext {
+  font-size: 2.4rem;
+  color: var(--text-color);
+  max-width: 60ch;
+  margin-bottom: 2rem;
+}
+
+.heroSubtext {
+  color: var(--darkest-red);
+  font-weight: 600;
+}
+
+.heroIcons {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  font-size: 4.4rem;
+  color: var(--darkest-red);
+  margin: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.icon:hover {
+  color: var(--dark-red);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  transform: translate(0, -0.5rem);
+}
+
+@media screen and (max-width: 1100px) {
+  .heroContainer {
+    margin: 20rem auto 0 5rem;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .heroContainer {
+    margin: 20rem auto 0 2rem;
+  }
+
+  .heroTopContent {
+    margin: 0 auto 4rem auto;
+  }
+
+  .heroBottomContent {
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heroText {
+    font-size: 2.2rem;
+  }
+
+  .heroSubtext {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .heroContainer {
+    margin: 20rem auto 0 0;
+  }
+
+  .heroTopContent {
+    margin: 0 auto 4rem auto;
+  }
+
+  .heroBottomContent {
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heroText {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .heroSubtext {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .heroContainer {
+    width: 100%;
+  }
+
+  .heroTopContent {
+    margin: 0 auto 4rem auto;
+  }
+
+  .heroBottomContent {
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heroText {
+    font-size: 1.8rem;
+  }
+
+  .heroSubtext {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .heroContainer {
+    width: 100%;
+    gap: 7.5rem;
+  }
+
+  .heroTopContent {
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    height: fit-content;
+  }
+
+  .heroImage {
+    margin: 0 auto 2rem auto;
+  }
+
+  .introContainer {
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .heroSubtitle {
+    font-size: 2rem;
+  }
+
+  .heroTitle {
+    font-size: 4rem;
+  }
+
+  .introText {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .heroText {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .heroSubtext {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .heroText,
+  .heroSubtext {
+    width: 90%;
+  }
 }
