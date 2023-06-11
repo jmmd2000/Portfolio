@@ -1,6 +1,6 @@
 .projectsContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
   gap: 2rem;
@@ -10,59 +10,88 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: end;
   background-color: var(--dark-red);
   border: 3px solid var(--darker-red);
-  height: 55rem;
-  max-width: fit-content;
+  height: 50rem;
+  width: 40rem;
+  gap: 2rem;
+  position: relative;
+  /* z-index: -1; */
 }
 
 .projectName {
   font-size: 2.4rem;
   margin: 2rem;
+  position: absolute;
+  top: 22rem;
 }
 
 .projectImage {
-  width: 50rem;
-  height: 25rem;
-  margin: 0 auto;
-  box-shadow: 0 0 0 4px var(--darkest-red);
+  width: 100%;
+  height: auto;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  box-shadow: 0 3px 0 0 var(--darkest-red);
 }
 
 .projectImagePortrait {
-  height: 25rem;
+  height: 20rem;
   width: auto;
+  position: absolute;
+  top: 0;
 }
 
 .projectDescription {
-  font-size: 1.8rem !important;
+  font-size: 1.6rem !important;
   width: 80%;
-  margin: 1rem;
+  margin-bottom: auto;
+  position: absolute;
+  top: 28rem;
 }
 
 .projectLink {
   font-size: 1.8rem;
-  margin: 1rem;
   color: var(--text-color) !important;
   text-decoration: underline var(--darkest-red);
+  position: absolute;
+  top: 46rem;
+  z-index: 2;
+}
+
+.projectLink:hover {
+  color: var(--darkest-red) !important;
+  cursor: pointer;
+}
+
+.chipContainer {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+  position: absolute;
+  top: 40rem;
+  color: var(--text-color) !important;
 }
 
 @media screen and (max-width: 1300px) {
   .projectsContainer {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width: 800px) {
   .project {
-    width: 80%;
+    /* width: 80%; */
+    /* width: 40rem; */
     align-items: center;
     justify-content: center;
-    height: fit-content;
+    /* height: 50rem; */
     gap: 1rem;
   }
 
-  .projectName {
+  /* .projectName {
     font-size: 2rem;
   }
 
@@ -72,10 +101,21 @@
 
   .projectLink {
     font-size: 1.6rem;
+  } */
+
+  /* .projectImage {
+    width: 100%;
+    height: auto;
+  } */
+}
+
+@media screen and (max-width: 700px) {
+  .projectsContainer {
+    grid-template-columns: repeat(1, 1fr);
   }
 
-  .projectImage {
-    width: 80%;
-    height: auto;
+  .project {
+    width: 90%;
+    margin: auto;
   }
 }

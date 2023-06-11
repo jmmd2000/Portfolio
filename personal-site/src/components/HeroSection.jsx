@@ -1,6 +1,12 @@
 import classes from "./HeroSection.module.css";
 
-import { Envelope, GithubLogo, LinkedinLogo } from "@phosphor-icons/react";
+import {
+  Envelope,
+  GithubLogo,
+  LinkedinLogo,
+  CodepenLogo,
+  Code,
+} from "@phosphor-icons/react";
 
 const HeroSection = () => {
   return (
@@ -38,6 +44,12 @@ const HeroSection = () => {
             <GithubLogo
               className={classes.icon}
               title="Github"
+            />
+          </a>
+          <a href="https://codepen.io/jmmd2000">
+            <CodepenLogo
+              className={classes.icon}
+              title="CodePen"
             />
           </a>
           <a href="https://www.linkedin.com/in/james-doyle-4b47ba245/">

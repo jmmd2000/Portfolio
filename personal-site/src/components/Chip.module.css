@@ -1,0 +1,15 @@
+.chip {
+  max-width: fit-content;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  background-color: var(--dark-red);
+  border: 3px solid var(--darker-red);
+  border-radius: 25rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.chip span {
+  color: var(--text-color) !important;
+  font-weight: normal;
+}

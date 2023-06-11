@@ -9,7 +9,7 @@ import { maynooth } from "./inputs/grades";
 import { fusio } from "./inputs/jobs";
 import Projects from "./components/Projects";
 import classes from "./components/HeroSection.module.css";
-import { Envelope, GithubLogo, LinkedinLogo } from "@phosphor-icons/react";
+import { Envelope, LinkedinLogo } from "@phosphor-icons/react";
 
 function App() {
   return (
@@ -102,7 +102,8 @@ function App() {
       >
         <p>
           All of my projects are on my{" "}
-          <a href="https://github.com/jmmd2000">Github</a>, but my best are
+          <a href="https://github.com/jmmd2000">Github</a>, or my{" "}
+          <a href="https://codepen.io/jmmd2000">CodePen</a>, but my best are
           listed below.
         </p>
         <Projects />
@@ -118,12 +119,6 @@ function App() {
           below!
         </p>
         <div className={classes.heroIcons}>
-          <a href="https://github.com/jmmd2000">
-            <GithubLogo
-              className={classes.icon}
-              title="Github"
-            />
-          </a>
           <a href="https://www.linkedin.com/in/james-doyle-4b47ba245/">
             <LinkedinLogo
               className={classes.icon}
